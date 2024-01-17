@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Easyeat.Menu">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Source={x:Reference Name=dishesList}, Path=SelectedItem.Title}"
+            FontSize="Large" />
+            <ListView x:Name="dishesList"
+              HasUnevenRows="True"
+              ItemsSource="{Binding Dishes}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                        ImageSource="{Binding ImagePath}"
+                        Text="{Binding Name}"
+                        Detail="{Binding Structure}"
+                        TextColor="Black"
+                        DetailColor="Black"
+                        />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Progress" Clicked="Button_Progress" VerticalOptions="End"/>
+                <Button Text="Menu" Clicked="Button_Menu" VerticalOptions="End"/>
+                <Button Text="Profil" Clicked="Button_Profil" VerticalOptions="End"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

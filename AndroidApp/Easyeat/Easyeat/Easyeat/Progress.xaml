@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Easyeat.Progress">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="https://fitfan.ru/uploads/forum/images/1333523769.jpg"
+ Aspect="AspectFit"
+ HorizontalOptions="Center" />
+
+            <Entry x:Name="Weight" Placeholder="Enter weight" />
+            <Entry x:Name="Date" Placeholder="Enter date" />
+            <Button Text="Save" Clicked="Button_SaveAsync"/>
+            <Label Text="The average daily intake of calories is approximately 2000 calories"
+ FontSize="Large"
+ FontAttributes="Italic"
+ HorizontalTextAlignment="Start" />
+            <Label Text="Your goal:"
+ FontSize="Large"
+ FontAttributes="Italic"
+ HorizontalTextAlignment="Start" />
+            <Label Text="Goal"
+           x:Name="goalField"
+        FontSize="Large"
+		FontAttributes="Italic"
+		HorizontalTextAlignment="Left" />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Progress" Clicked="Button_Progress" VerticalOptions="End"/>
+                <Button Text="Menu" Clicked="Button_Menu" VerticalOptions="End"/>
+                <Button Text="Profil" Clicked="Button_Profil" VerticalOptions="End"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

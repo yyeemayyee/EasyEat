@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Easyeat.Profil">
+    <StackLayout Margin="15">
+        <StackLayout  Orientation="Vertical" Padding="20,20,20,20">
+            <Label Text="Name"
+           x:Name="nameField"
+        FontSize="Large"
+		FontAttributes="Italic"
+		HorizontalTextAlignment="Left" />
+
+        <Label Text="Height"
+           x:Name="heightField"
+        FontSize="Large"
+		FontAttributes="Italic"
+		HorizontalTextAlignment="Left" />
+
+        <Label Text="Weight"
+           x:Name="weightField"
+        FontSize="Large"
+		FontAttributes="Italic"
+		HorizontalTextAlignment="Left" />
+
+        <Label Text="Age"
+           x:Name="ageField"
+        FontSize="Large"
+		FontAttributes="Italic"
+		HorizontalTextAlignment="Left" />
+
+        <Label Text="Gender"
+           x:Name="genderField"
+        FontSize="Large"
+		FontAttributes="Italic"
+		HorizontalTextAlignment="Left" />
+
+
+        <Picker Title="Goal" x:Name="goalField"></Picker>
+        <Button Text="Edit" Clicked="Button_Edit"/>
+
+        <Picker Title="Typeofdiet" x:Name="typeofdietField"></Picker>
+        <Button Text="Edit" Clicked="Button_Edit1"/>
+    </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Progress" Clicked="Button_Progress" VerticalOptions="End"/>
+            <Button Text="Menu" Clicked="Button_Menu" VerticalOptions="End"/>
+            <Button Text="Profil" Clicked="Button_Profil" VerticalOptions="End"/>
+    </StackLayout>
+
+    </StackLayout>
+</ContentPage>

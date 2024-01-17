@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Easyeat.View1" Title="Second Page">
+    <StackLayout Margin="15">
+        <Entry x:Name="nameField" Placeholder="Enter Name" />
+        <Picker Title="Height" x:Name="Height"></Picker>
+        <Picker Title="Age" x:Name="Age"></Picker>
+        <Picker Title="Weight" x:Name="Weight"></Picker>
+        <Picker Title="Gender" x:Name="Gender"></Picker>
+        <Picker Title="Goal" x:Name="Goal"></Picker>
+        <Picker Title="Typeofdiet" x:Name="Typeofdiet"></Picker>
+        <Button Text="Save" Clicked="Button_SaveAsync"/>
+    </StackLayout>
+</ContentPage>
+    

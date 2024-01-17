@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Easyeat.Menu2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Menu"
+           x:Name="nameField"
+        FontSize="Large"
+		FontAttributes="Italic"
+		HorizontalTextAlignment="Left" />
+
+            <Button Text="Breakfast" Clicked="Button_Breakfast"/>
+            <Button Text="Lunch" Clicked="Button_Lunch"/>
+            <Button Text="Dinner" Clicked="Button_Dinner"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Progress" Clicked="Button_Progress" VerticalOptions="End"/>
+                <Button Text="Menu" Clicked="Button_Menu" VerticalOptions="End"/>
+                <Button Text="Profil" Clicked="Button_Profil" VerticalOptions="End"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
