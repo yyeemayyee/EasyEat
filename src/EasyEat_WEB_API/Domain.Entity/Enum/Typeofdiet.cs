@@ -1,6 +1,6 @@
 namespace Domain.Entity.Enum;
 
-public enum Typeofdish
+public enum Typeofdiet
 {
     Undefined = 0,
     

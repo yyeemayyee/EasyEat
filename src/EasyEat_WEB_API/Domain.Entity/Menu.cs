@@ -1,9 +1,11 @@
 ﻿namespace Domain.Entity
 {
-    internal class Menu : BaseEntity
+    public class Menu : BaseEntity
     {
         public string Name { get; set; }
-        public string Startdate { get; set; }
-        public string EndDate { get; set; }
+        public DateTime Startdate { get; set; }
+        public DateTime EndDate { get; set; }
+        
+        public List<MenuDish> MenuDishes { get; } = new List<MenuDish>();
     }
 }

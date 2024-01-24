@@ -1,6 +1,10 @@
 namespace Domain.Entity.Enum;
 
-public class TypeOfGender
+public enum TypeOfGender
 {
+    Undefined = 0,
     
+    Male = 1,
+    
+    FeMale = 2,
 }

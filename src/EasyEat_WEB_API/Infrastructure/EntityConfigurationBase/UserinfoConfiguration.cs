@@ -12,5 +12,11 @@ public class UserinfoConfiguration : EntityConfigurationBase<Userinfo>
             .WithOne(e => e.Userinfo)
             .HasForeignKey<Userinfo>(e => e.UserId)
             .IsRequired();
+        
+        builder
+            .HasOne(e => e.Progress)
+            .WithOne(e => e.Userinfo)
+            .HasForeignKey<Progress>(e => e.UserinfoId)
+            .IsRequired();
     }
 }

@@ -1,6 +1,28 @@
 namespace Infrastructure.SeedData;
 
-public class DbCreator
+public interface IDbCreator
 {
-    
+    void Create();
+}
+
+public class DbCreator : IDbCreator
+{
+    private readonly DataContext _dataContext;
+
+    public DbCreator(DataContext dataContext)
+    {
+        _dataContext = dataContext;
+    }
+
+    public void Create()
+    {
+        var canConnect = _dataContext.Database.CanConnect();
+        if (!canConnect)
+        {
+            _dataContext.Database.EnsureCreated();
+
+            _dataContext.AddRange(FakeDataFactory.Users);
+            _dataContext.SaveChanges();
+        }
+    }
 }

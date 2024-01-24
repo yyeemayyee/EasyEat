@@ -2,8 +2,12 @@
 {
     public class Progress : BaseEntity
     {
-        public string Value { get; set; }
-        public string Date { get; set; }
-        public int IdUserinfo { get; set; }
+        public int Value { get; set; }
+        
+        public DateTime Date { get; set; }
+        
+        public int UserinfoId { get; set; }
+        
+        public virtual Userinfo Userinfo { get; set; }
     }
 }
