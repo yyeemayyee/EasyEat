@@ -74,6 +74,9 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("Startdate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Typeofdiet")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Menu");

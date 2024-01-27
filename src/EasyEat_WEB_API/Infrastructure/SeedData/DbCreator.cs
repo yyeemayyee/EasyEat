@@ -23,6 +23,12 @@ public class DbCreator : IDbCreator
 
             _dataContext.AddRange(FakeDataFactory.Users);
             _dataContext.SaveChanges();
+            
+            _dataContext.AddRange(FakeDataFactory.Dishes);
+            _dataContext.SaveChanges();
+            
+            _dataContext.AddRange(FakeDataFactory.Menus);
+            _dataContext.SaveChanges();
         }
     }
 }

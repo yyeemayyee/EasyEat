@@ -1,4 +1,6 @@
-﻿namespace Domain.Entity
+﻿using Domain.Entity.Enum;
+
+namespace Domain.Entity
 {
     public class Menu : BaseEntity
     {
@@ -6,6 +8,8 @@
         public DateTime Startdate { get; set; }
         public DateTime EndDate { get; set; }
         
-        public List<MenuDish> MenuDishes { get; } = new List<MenuDish>();
+        public Typeofdiet Typeofdiet { get; set; }
+        
+        public List<MenuDish> MenuDishes { get; set; } = new List<MenuDish>();
     }
 }

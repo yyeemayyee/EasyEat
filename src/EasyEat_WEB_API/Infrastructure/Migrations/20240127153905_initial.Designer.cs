@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240124150342_initial")]
+    [Migration("20240127153905_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -76,6 +76,9 @@ namespace Infrastructure.Migrations
 
                     b.Property<DateTime>("Startdate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Typeofdiet")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
