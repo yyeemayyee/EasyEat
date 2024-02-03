@@ -3,7 +3,7 @@ using Infrastructure.SeedData;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+string origin = "MyAllowSpecificOrigins";
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -16,6 +16,13 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(
         "Server=localhost,1433;Database=EasyEat;user id=graphservice1datareader;password='graphservice1datareader';Trust Server Certificate=true"));
 
+builder.Services.AddCors(o => o.AddPolicy(origin, builder =>
+{
+    builder.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+}));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,6 +33,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(x => x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true)
+    .AllowCredentials());
 
 app.UseAuthorization();
 
