@@ -13,8 +13,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IDbCreator, DbCreator>();
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(
-        "Server=localhost,1433;Database=EasyEat;user id=graphservice1datareader;password='graphservice1datareader';Trust Server Certificate=true"));
+   options.UseSqlServer(
+        "Server=localhost,1433;Database=EasyEat;user id=sa;password='123';Trust Server Certificate=true"));
+
 
 builder.Services.AddCors(o => o.AddPolicy(origin, builder =>
 {
