@@ -1,4 +1,6 @@
 using Infrastructure;
+using Infrastructure.Abstractions;
+using Infrastructure.Ripository;
 using Infrastructure.SeedData;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,10 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IDbCreator, DbCreator>();
 builder.Services.AddDbContext<DataContext>(options =>
    options.UseSqlServer(
-        "Server=localhost,1433;Database=EasyEat;user id=sa;password='123';Trust Server Certificate=true"));
+       "Server=localhost,1433;Database=EasyEat;user id=graphservice1datareader;password='graphservice1datareader';Trust Server Certificate=true"));
+        //"Server=localhost,1433;Database=EasyEat;user id=sa;password='123';Trust Server Certificate=true"));
 
 
 builder.Services.AddCors(o => o.AddPolicy(origin, builder =>
