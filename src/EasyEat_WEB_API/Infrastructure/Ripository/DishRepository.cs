@@ -3,9 +3,9 @@ using Infrastructure.Abstractions;
 
 namespace Infrastructure.Ripository;
 
-public class UserRepository : Repository<User>, IUserRepository
+public class DishRepository : Repository<Dish>, IDishRepository
 {
-    public UserRepository(DataContext dataContext) : base(dataContext)
+    public DishRepository(DataContext dataContext) : base(dataContext)
     {
         
     }
@@ -13,5 +13,10 @@ public class UserRepository : Repository<User>, IUserRepository
     {
         return Task.FromResult(_dataContext.Set<User>()
             .AsQueryable().FirstOrDefault(p => p.Login == login && p.Password == password && p.Email == email));
+    }
+
+    public Task<Dish?> GetDishByAuthData()
+    {
+        throw new NotImplementedException();
     }
 }
