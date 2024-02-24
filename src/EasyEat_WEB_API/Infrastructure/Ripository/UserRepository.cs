@@ -9,9 +9,9 @@ public class UserRepository : Repository<User>, IUserRepository
     {
         
     }
-    public Task<User?> GetUserByAuthData(string login, string password, string email)
+    public Task<User?> GetUserByAuthData(string login, string password)
     {
         return Task.FromResult(_dataContext.Set<User>()
-            .AsQueryable().FirstOrDefault(p => p.Login == login && p.Password == password && p.Email == email));
+            .AsQueryable().FirstOrDefault(p => p.Login == login && p.Password == password));
     }
 }

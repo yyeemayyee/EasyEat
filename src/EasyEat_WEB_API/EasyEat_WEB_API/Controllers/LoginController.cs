@@ -21,9 +21,9 @@ public class LoginController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public string Login(string login , string password, string email)
+    public async Task<bool> Login(string login , string password)
     {
-        var user = _userRepository.GetUserByAuthData(login, password, email);
-        return "тест пройден";
+        var user = await _userRepository.GetUserByAuthData(login, password);
+        return user!=null;
     }
 }

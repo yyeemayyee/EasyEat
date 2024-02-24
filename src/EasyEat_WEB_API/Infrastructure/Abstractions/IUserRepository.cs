@@ -4,5 +4,5 @@ namespace Infrastructure.Abstractions;
 
 public interface IUserRepository : IRepository<User>
 {
-    public Task<User?> GetUserByAuthData(string login, string password, string email);
+    public Task<User?> GetUserByAuthData(string login, string password);
 }
