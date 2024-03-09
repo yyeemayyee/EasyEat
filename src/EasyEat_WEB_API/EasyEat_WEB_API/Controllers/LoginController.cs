@@ -1,3 +1,5 @@
+using System.Formats.Asn1;
+using Domain.Entity;
 using Infrastructure.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,5 +27,17 @@ public class LoginController : ControllerBase
     {
         var user = await _userRepository.GetUserByAuthData(login, password);
         return user!=null;
+    }
+    
+    [HttpPost("registration")]
+    public async Task Registration(AuthModel model)
+    {
+        await _userRepository.AddAsync(new User
+        {
+            Email = model.email,
+            Login = model.login,
+            Password = model.password
+        });
+        await _userRepository.SaveChangesAsync();
     }
 }
