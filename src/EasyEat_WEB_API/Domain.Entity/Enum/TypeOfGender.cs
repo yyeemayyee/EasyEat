@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace Domain.Entity.Enum;
 
 public enum TypeOfGender
